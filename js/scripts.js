@@ -31,12 +31,16 @@ let pokemonList = [
   }
 ]
 
-for (let i = 0; i < pokemonList.length; i++){
-  if (pokemonList[i].height > 1.5){
-    document.write(pokemonList[i].name + " height: " +  pokemonList[i].height + " Wow, that's big!");
-    document.write("<br>");
-  }else {
-    document.write(pokemonList[i].name + " height: " +  pokemonList[i].height);
-    document.write("<br>");
-  }
-}
+// for (let i = 0; i < pokemonList.length; i++){
+//   if (pokemonList[i].height > 1.5){
+//     document.write(pokemonList[i].name + " height: " +  pokemonList[i].height + " Wow, that's big!");
+//     document.write("<br>");
+//   }else {
+//     document.write(pokemonList[i].name + " height: " +  pokemonList[i].height);
+//     document.write("<br>");
+//   }
+// }
+
+pokemonList.forEach(function(pokemon){
+  console.log(pokemon.name + " height: " + pokemon.height + " type: " + pokemon.type);
+});
