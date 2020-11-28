@@ -1,6 +1,7 @@
 let pokemonRepository = (function (){
 let pokemonList = []
 let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+let modalContainer = document.querySelector('#modal-container');
 
 function getAll(){
   return pokemonList;
@@ -52,8 +53,62 @@ function loadDetails(item) {
   });
 }
 
+function showModal(item){
+  let modalContainer = document.querySelector('#modal-container');
+
+  modalContainer.innerHTML = '';
+  let modal = document.createElement('div');
+  modal.classList.add('modal');
+
+  let nameElement = document.createElement('h1');
+  nameElement.innerText = item.name;
+
+  let heightElement = document.createElement('p');
+  heightElement.innerText = "height: " + item.height;
+
+  let imageElement = document.createElement('img');
+  imageElement.src = item.imageUrl;
+
+  let closeButtonElement = document.createElement('button');
+  closeButtonElement.classList.add('modal-close');
+  closeButtonElement.innerText = 'Close';
+  closeButtonElement.addEventListener('click', hideModal);
+
+  modal.appendChild(nameElement);
+  modal.appendChild(heightElement);
+  modal.appendChild(imageElement);
+  modal.appendChild(closeButtonElement);
+  modalContainer.appendChild(modal);
+
+  modalContainer.classList.add('is-visible');
+}
+
+function hideModal(){
+  let modalContainer = document.querySelector('#modal-container');
+  modalContainer.classList.remove('is-visible');
+}
+
+window.addEventListener('keydown', (e) => {
+  let modalContainer = document.querySelector('#modal-container');
+  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')){
+    hideModal();
+  }
+});
+
+modalContainer.addEventListener('click', (e) => {
+  let target = e.target;
+  if (target === modalContainer){
+    hideModal();
+  }
+});
+
+document.querySelector('.pokemon-list').addEventListener('click', () => {
+  showModal(item);
+});
+
 function showDetails(pokemon) {
   loadDetails(pokemon).then(function(){
+  showModal(pokemon);
   console.log(pokemon);
 });
 }
@@ -65,6 +120,7 @@ return{
   showDetails: showDetails,
   loadList: loadList,
   loadDetails: loadDetails,
+  showModal: showModal,
 };
 
 })();
