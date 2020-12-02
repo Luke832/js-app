@@ -20,7 +20,9 @@ function addListItem(pokemon){
   listItem.appendChild(button);
   pokemonList.appendChild(listItem);
   button.addEventListener("click", function showDetails(event){
-    console.log(pokemon);
+    // console.log(pokemon);
+    // event.preventDefault();
+    showDetails(pokemon);
   });
 }
 
@@ -61,13 +63,13 @@ function showModal(item){
   modal.classList.add('modal');
 
   let nameElement = document.createElement('h1');
-  nameElement.innerText = item.name;
+  nameElement.innerText = (item.name);
 
   let heightElement = document.createElement('p');
-  heightElement.innerText = "height: " + item.height;
+  heightElement.innerText = ("height: " + item.height);
 
   let imageElement = document.createElement('img');
-  imageElement.src = item.imageUrl;
+  imageElement.src = (item.imageUrl);
 
   let closeButtonElement = document.createElement('button');
   closeButtonElement.classList.add('modal-close');
@@ -103,7 +105,7 @@ modalContainer.addEventListener('click', (e) => {
 });
 
 document.querySelector('.pokemon-list').addEventListener('click', () => {
-  showModal(item);
+  showModal(name);
 });
 
 function showDetails(pokemon) {
