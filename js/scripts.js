@@ -17,7 +17,7 @@ function addListItem(pokemon){
   let button = $("<button>" + pokemon.name + "</button>");
   button.addClass("btn-primary");
   button.attr("data-toggle", "modal");
-  button.attr("data-target", "pokemonModal");
+  button.attr("data-target", "#pokemonModal");
   listItem.append(button);
   list.append(listItem);
   button.on("click", function(event){
@@ -27,10 +27,10 @@ function addListItem(pokemon){
 }
 
 function loadList(){
-  return fetch(apiUrl).then(function (response){
+  return fetch(apiUrl).then(function(response) {
     return response.json();
   }).then(function(json){
-    json.results.forEach(function (item){
+    json.results.forEach(function(item) {
       let pokemon = {
         name: item.name,
         detailsUrl: item.url,
