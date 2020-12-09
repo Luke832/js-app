@@ -59,6 +59,9 @@ function showModal(item){
   let modalTitle = $(".modal-title");
   let modalBody = $(".modal-body");
 
+  modalTitle.empty();
+  modalBody.empty();
+
   // let modalContainer = document.querySelector('#modal-container');
   //
   // modalContainer.innerHTML = '';
