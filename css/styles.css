@@ -6,7 +6,6 @@ body {
 }
 
 #title {
-  margin-left: 45px;
   color: #006400;
   font-size: 100px;
   text-align: center;
@@ -18,7 +17,7 @@ body {
   list-style-type: none;
 }
 
-.btn-primay {
+.btn-primary {
   color: #ffffff;
   background-color: #0000ff;
 }
