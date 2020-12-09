@@ -2,7 +2,24 @@ body {
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 24px;
   color: #4bafa5;
+  background-color: #a9a9a9;
 }
+
+#title {
+  margin-left: 45px;
+  color: #006400;
+  font-size: 100px;
+  text-align: center;
+}
+
+.pokemon-list {
+  font-size: 22px;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+
+
 .button-class {
   background-color: #4caf50; /* Green */
   border: none;
