@@ -1,7 +1,7 @@
 let pokemonRepository = (function (){
 let pokemonList = []
 let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-let modalContainer = document.querySelector('#modal-container');
+// let modalContainer = document.querySelector('#modal-container');
 
 function getAll(){
   return pokemonList;
@@ -14,14 +14,14 @@ function add(item){
 function addListItem(pokemon){
   let list = $(".pokemon-list");
   let listItem = $("<li></li>");
-  let button = S("<button>" + pokemon.name + "</button>");
+  let button = $("<button>" + pokemon.name + "</button>");
   button.addClass("btn-primary");
   button.attr("data-toggle", "modal");
   button.attr("data-target", "pokemonModal");
   listItem.append(button);
   list.append(listItem);
   button.on("click", function(event){
-    event.preventDefault();
+    // event.preventDefault();
     showDetails(pokemon);
   });
 }
@@ -69,7 +69,7 @@ function showModal(item){
 
   let heightElement = $("<p>" + "Height: " + item.height + "</p>");
 
-  let imageElement = $("<img class="modal-img" style="width:50%>");
+  let imageElement = $('<img class="modal-img" style="width:50%">');
   imageElement.attr("src", item.imageUrl);
   //
   // let closeButtonElement = document.createElement('button');
@@ -127,7 +127,7 @@ return{
   showDetails: showDetails,
   loadList: loadList,
   loadDetails: loadDetails,
-  // showModal: showModal,
+  showModal: showModal,
 };
 
 })();

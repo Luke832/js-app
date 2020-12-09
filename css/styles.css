@@ -18,7 +18,10 @@ body {
   list-style-type: none;
 }
 
-
+.btn-primay {
+  color: #ffffff;
+  background-color: #0000ff;
+}
 
 .button-class {
   background-color: #4caf50; /* Green */
