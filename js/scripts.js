@@ -66,7 +66,7 @@ function showModal(item){
   modalTitle.empty();
   modalBody.empty();
 
-  let nameElement = $("<h1>" + item.name + "</h1>");
+  let nameElement = $(`<h1>  ${item.name}  </h1>`);
 
   let heightElement = $("<p>" + "Height: " + item.height + "</p>");
 
