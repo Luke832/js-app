@@ -72,7 +72,7 @@ function showModal(item){
 
   let nameElement = $(`<h1>  ${item.name}  </h1>`);
 
-  let heightElement = $("<p>" + "Height: " + item.height + "</p>");
+  let heightElement = $(`<p> Height: ${item.height} </p>`);
 
   let imageElement = $("<img class=\"modal-img\" style=\"width:50%\">");
   imageElement.attr("src", item.imageUrl);
