@@ -95,7 +95,7 @@ return{
   showDetails: showDetails,
   loadList: loadList,
   loadDetails: loadDetails,
-  showModal: showModal,
+  showModal: showModal
 };
 
 })();
